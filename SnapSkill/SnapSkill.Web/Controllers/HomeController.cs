@@ -8,13 +8,17 @@ namespace SnapSkill.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ICourse _course; 
+
+        public HomeController(ILogger<HomeController> logger,ICourse course)
         {
             _logger = logger;
+            _course = course;
         }
 
         public IActionResult Index()
         {
+            _logger.LogInformation("I am in index");
             return View();
         }
 
