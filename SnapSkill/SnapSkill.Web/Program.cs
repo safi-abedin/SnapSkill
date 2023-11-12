@@ -2,11 +2,20 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
+using Serilog.Events;
 using SnapSkill.Web;
 using SnapSkill.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Serilog Configuration
+builder.Host.UseSerilog((ctx, lc) => lc
+    .MinimumLevel.Debug()
+    .MinimumLevel.Override("Microsoft",LogEventLevel.Warning)
+    .Enrich.FromLogContext()
+    .ReadFrom.Configuration(builder.Configuration)
+);
 
 //Added Autofac for Dependency injection
 builder.Host.UseServiceProviderFactory(x => new AutofacServiceProviderFactory());
