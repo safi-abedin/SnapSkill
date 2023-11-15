@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SnapSkill.Web.Areas.Admin.Models;
 
 namespace SnapSkill.Web.Data
 {
@@ -9,5 +10,7 @@ namespace SnapSkill.Web.Data
             : base(options)
         {
         }
+
+        public DbSet<Course> Courses { get; set; }
     }
 }

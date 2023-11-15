@@ -8,7 +8,6 @@ namespace SnapSkill.Web
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<Course>().As<ICourse>();
         }
     }
 }
