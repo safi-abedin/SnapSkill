@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SnapSkill.Web.Areas.Admin.Models
 {
-    public class Course
+    public class Course : ICourse
     {
         public Guid Id { get; set; }
 
@@ -18,23 +19,28 @@ namespace SnapSkill.Web.Areas.Admin.Models
 
         public DateTime startDate { get; set; }
 
-        public TimeSpan RemainingTime
-        {
-            get
-            {
-                return startDate - DateTime.UtcNow;
-            }
-            set
-            {
-                RemainingTime = value;
-            }
-        }
+        [NotMapped]
+        public DateOnly DateOnly { get; set; }
 
         public string DayOfWeek { get; set; }
 
-        public string startTime;
+        [Required]
+        public string startTime { get; set; }
 
-        public string endTime;
+        public string endTime { get; set; }
+
+        public Course() 
+        {
+
+            DateOnly = SeparateTime();
+        }
+
+        public DateOnly SeparateTime()
+        {
+            DateOnly = DateOnly.FromDateTime(startDate);
+
+            return DateOnly;
+        }
 
     }
 }

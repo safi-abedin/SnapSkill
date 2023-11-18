@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SnapSkill.Web.Migrations
 {
     /// <inheritdoc />
-    public partial class CourseTable : Migration
+    public partial class CreateCourse : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -57,11 +57,12 @@ namespace SnapSkill.Web.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     level = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
                     startDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RemainingTime = table.Column<TimeSpan>(type: "time", nullable: false),
-                    DayOfWeek = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    DayOfWeek = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    startTime = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    endTime = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
