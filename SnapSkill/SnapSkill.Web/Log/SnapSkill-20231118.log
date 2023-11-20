@@ -558,3 +558,6 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2023-11-18 17:15:27.318 +06:00 [INF] I am Showing Data
 2023-11-18 17:16:33.024 +06:00 [INF] I am in index
 2023-11-18 17:16:45.901 +06:00 [INF] I am Showing Data
+2023-11-18 17:20:16.667 +06:00 [INF] I am in index
+2023-11-18 17:20:22.215 +06:00 [INF] I am Showing Data
+2023-11-18 17:25:59.091 +06:00 [INF] I am Showing Data
