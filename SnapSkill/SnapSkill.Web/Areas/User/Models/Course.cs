@@ -30,6 +30,9 @@ namespace SnapSkill.Web.Areas.User.Models
 
         public string endTime { get; set; }
 
+
+        public string ImageURL { get; set; }
+
         public Course()
         {
 

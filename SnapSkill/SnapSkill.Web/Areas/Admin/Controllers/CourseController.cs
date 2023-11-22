@@ -53,6 +53,7 @@ namespace SnapSkill.Web.Areas.Admin.Controllers
                 DayOfWeek = course.DayOfWeek,
                 startTime = course.startTime,
                 endTime = course.endTime,
+                ImageURL = course.ImageURL
             };
             _applicationDbContext.Courses.Add(data);
              _applicationDbContext.SaveChanges();

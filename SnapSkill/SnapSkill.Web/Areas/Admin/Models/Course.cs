@@ -29,6 +29,9 @@ namespace SnapSkill.Web.Areas.Admin.Models
 
         public string endTime { get; set; }
 
+
+        public string ImageURL { get; set; }
+
         public Course() 
         {
 

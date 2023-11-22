@@ -12,8 +12,8 @@ using SnapSkill.Web.Data;
 namespace SnapSkill.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231118110039_UpdatedCourseTable")]
-    partial class UpdatedCourseTable
+    [Migration("20231122112546_CreateCourseTable")]
+    partial class CreateCourseTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -203,6 +203,10 @@ namespace SnapSkill.Web.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

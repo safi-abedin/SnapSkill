@@ -201,6 +201,10 @@ namespace SnapSkill.Web.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -217,7 +221,7 @@ namespace SnapSkill.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("startDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<string>("startTime")
                         .IsRequired()

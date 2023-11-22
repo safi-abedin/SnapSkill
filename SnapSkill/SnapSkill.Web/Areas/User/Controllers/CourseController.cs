@@ -31,7 +31,6 @@ namespace SnapSkill.Web.Areas.User.Controllers
             {
                 course.SeparateTime();
             }
-
             return View(data);
         }
     }
